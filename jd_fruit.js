@@ -1,4 +1,4 @@
-
+//20210627 京东水果把助力其他人取消
 const $ = new Env('东东农场');
 let cookiesArr = [], cookie = '', jdFruitShareArr = [], isBox = false, notify, newShareCodes, allMessage = '';
 //助力好友分享码(最多4个,否则后面的助力失败),原因:京东农场每人每天只有四次助力机会
@@ -1267,11 +1267,11 @@ function shareCodesFormat() {
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
+    /* const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       // newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
       newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
-    }
+    } */
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
     resolve();
   })
